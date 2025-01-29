@@ -4,6 +4,7 @@ public class MinimumOfTwoNumbers {
 
     public static int min(int a, int b) {
         //write your code here
+        return a < b ? a : b;
     }
 
     public static void main(String[] args) {
