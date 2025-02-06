@@ -9,9 +9,15 @@ public class Queen {
         populate();
 
         //write your code here
+        for (int i = 0; i < workers.length; i++) {
+            Worker woker = workers[i];
+            woker.sendForFood();
+        }
+        for (int i = 0; i < soldiers.length; i++) {
+            Soldier soldier = soldiers[i];
+            soldier.sendIntoBattle();
 
-        sendForFood();
-
+        }
     }
 
     public static void populate() {
@@ -23,6 +29,7 @@ public class Queen {
         soldiers = new Soldier[70];
         for (int i = 0; i < soldiers.length; i++) {
             soldiers[i] = new Soldier();
+        
         }
     }
 }
