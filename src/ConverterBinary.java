@@ -1,4 +1,5 @@
 public class ConverterBinary {
+
     public static void main(String[] args) {
         int decimalNumber = Integer.MAX_VALUE;
         System.out.println("Decimal number " + decimalNumber + " is equal to binary number " + toBinary(decimalNumber));
@@ -32,5 +33,4 @@ public class ConverterBinary {
         }
         return decimalNumber;
     }
-
 }
