@@ -1,5 +1,6 @@
 public class HexadecimalConverter {
 
+    private static final String HEX = "0123456789abcdef";
 
     public static void main(String[] args) {
         int decimalNumber = 1256;
@@ -9,12 +10,27 @@ public class HexadecimalConverter {
     }
 
     public static String toHex(int decimalNumber) {
-        //write your code here
-        return null;
+        String hexNumber = "";
+        if (decimalNumber <= 0) {
+            return hexNumber;
+        }
+
+        while (decimalNumber != 0) {
+            hexNumber = HEX.charAt(decimalNumber % 16) + hexNumber;
+            decimalNumber = decimalNumber / 16;
+        }
+        return hexNumber;
     }
 
     public static int toDecimal(String hexNumber) {
-        //write your code here
-        return 0;
+        int decimalNumber = 0;
+        if (hexNumber == null) {
+            return decimalNumber;
+        }
+
+        for (int i = 0; i < hexNumber.length(); i++) {
+            decimalNumber = 16 * decimalNumber + HEX.indexOf(hexNumber.charAt(i));
+        }
+        return decimalNumber;
     }
 }
