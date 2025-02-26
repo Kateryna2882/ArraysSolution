@@ -9,6 +9,12 @@ public class PathUpdate {
 
     public static String changePath(String path, String jdk) {
         //write your code here
-        return null;
+
+        int firstIndex = path.indexOf("jdk");
+        int lastIndex = path.indexOf("/", firstIndex);
+        String oldJdk = path.substring(firstIndex, lastIndex);
+
+        return path.replace(oldJdk, jdk);
+
     }
 }
