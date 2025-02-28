@@ -10,6 +10,6 @@ public class SolutionStringPool {
 
     public static boolean equal(String first, String second) {
         //write your code here
-        return false;
+        return first.intern() == second.intern();
     }
 }
