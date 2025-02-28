@@ -17,5 +17,6 @@ public class SearchingString {
     public static int getIndexOfLastWord(String string, String word) {
         //write your code here
         return string.lastIndexOf(word);
+
     }
 }
