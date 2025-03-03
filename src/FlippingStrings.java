@@ -8,7 +8,8 @@ public class FlippingStrings {
 
     public static String reverseString(String string) {
         //write your code here
-        return null;
+        StringBuilder stringBuilder = new StringBuilder(string);
+       return stringBuilder.reverse().toString();
     }
 
 }
