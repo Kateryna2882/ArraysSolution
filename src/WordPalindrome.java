@@ -8,7 +8,9 @@ public class WordPalindrome {
 
     public static boolean isPalindrome(String word) {
         //write your code here
-        return false;
+        StringBuilder stringBuilder = new StringBuilder(word);
+        stringBuilder.reverse();
+        return word.equalsIgnoreCase(stringBuilder.toString());
     }
 
 }
