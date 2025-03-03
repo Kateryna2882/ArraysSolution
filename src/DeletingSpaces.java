@@ -7,7 +7,7 @@ public class DeletingSpaces {
 
     public static String deleteSpaces(String string) {
         //write your code here
-        return null;
+        return string.replaceAll(" ", "");
     }
 
 }
