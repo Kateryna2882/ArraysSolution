@@ -1,26 +1,29 @@
-package strings;
+package constructors;
 
-public class Friend {
+public class Friends1 {
+
+    //write your code here
     public String name;
     public int age;
     public char sex;
 
-
-    public void initialize(String name) {
+    public Friends1(String name) {
         this.name = name;
     }
 
-    public void initialize(String name, int age){
+    public Friends1(String name, int age) {
         this.name = name;
         this.age = age;
     }
-    public void initialize(String name, int age, char sex){
+
+    public Friends1(String name, char sex, int age) {
         this.name = name;
-        this.age = age;
         this.sex = sex;
+        this.age = age;
     }
 
     public static void main(String[] args) {
 
     }
+
 }
