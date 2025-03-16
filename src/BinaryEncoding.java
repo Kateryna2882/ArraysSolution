@@ -1,6 +1,8 @@
 public class BinaryEncoding {
 
 
+
+
     public static void main(String[] args) {
         String string = "CodeGym!";
         char[] charArray = string.toCharArray();
@@ -15,8 +17,13 @@ public class BinaryEncoding {
     }
 
     public static String toBinary(int number) {
-        //write your code here
-        return null;
+        String result = "";
+        while (number != 0) {
+            result = number % 2 + result;
+            number /= 2;
+        }
+        return result;
     }
-
 }
+
+
