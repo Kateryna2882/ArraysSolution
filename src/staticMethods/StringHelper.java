@@ -4,19 +4,19 @@ public class StringHelper {
 
 
     public static String multiply(String text) {
-        String result = "";
-        //write your code here
-        return result;
+        return multiply(text, 5);
     }
 
     public static String multiply(String text, int count) {
-        String result = "";
-        //write your code here
-        return result;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            stringBuilder.append(text);
+        }
+
+        return stringBuilder.toString();
     }
 
     public static void main(String[] args) {
 
     }
-
 }
