@@ -4,4 +4,15 @@ public class Student {
         System.out.println(student.name);
     }
 
+
+    public Student() {
+    }
+
+        String name;
+
+    public Student(String name) {
+        this.name = name;
+    }
 }
+
+
