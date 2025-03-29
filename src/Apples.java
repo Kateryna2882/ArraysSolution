@@ -5,7 +5,7 @@ public class Apples {
     public static void main(String[] args) {
         CellPhone cellPhone1 = new CellPhone("Pineapple", "piPhone Z");
         CellPhone cellPhone2 = new CellPhone("Pineapple", "piPhone Z");
-        if (cellPhone1.equals( cellPhone2)) {
+        if (cellPhone1.equals(cellPhone2)) {
             System.out.println("The phones are the same");
         }
     }
@@ -37,5 +37,4 @@ class CellPhone {
     public int hashCode() {
         return Objects.hash(vendor, model);
     }
-
 }
