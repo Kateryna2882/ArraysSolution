@@ -10,7 +10,7 @@ public class ApproximateValue {
         float approx = big;
 
         //write your code here
-        return 0;
+        return big - (int) approx;
     }
 
 }
