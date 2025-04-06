@@ -10,6 +10,9 @@ public class HumanSolution { public static void main(String[] args) {
         double weigh;
         long phone;
 
+        public Human() {
+        }
+
         public Human(String name, int age, char sex) {
             this.name = name;
             this.age = age;
