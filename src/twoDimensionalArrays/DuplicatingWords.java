@@ -9,21 +9,27 @@ import static solutionarraylist.SolutionArrayList.list;
 public class DuplicatingWords {
     public static void main(String[] args) throws Exception {
         // Read strings from the console and declare an ArrayList here
-        ArrayList<String>strings = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-       String reader = reader.readLine();
-        for (String string : strings) {
-
+        ArrayList<String> strings = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            String string = reader.readLine();
+            strings.add(string);
         }
 
         ArrayList<String> result = doubleValues(list);
-
-        // Display result
+        for (String string : result) {
+            System.out.println(string);
+            // Display result
+        }
     }
-
     public static ArrayList<String> doubleValues(ArrayList<String> list) {
         //write your code here
-        return null;
+        ArrayList<String> result = new ArrayList<>();
+        for (String string : list){
+            result.add(string);
+            result.add(string);
+        }
+        return result;
     }
 
 }
