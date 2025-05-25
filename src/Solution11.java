@@ -1,4 +1,5 @@
 public class Solution11 {
+
     public static void main(String[] args) throws Exception {
         int[] data = new int[]{1, 2, 3, 5, -2, -8, 0, 77, 5, 5};
 
@@ -13,9 +14,17 @@ public class Solution11 {
             return new Pair<Integer, Integer>(null, null);
         }
 
-        //write your code here
+        int minimum = array[0];
+        int maximum = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < minimum)
+                minimum = array[i];
 
-        return new Pair<Integer, Integer>(0, 0);
+            if (array[i] > maximum)
+                maximum = array[i];
+        }
+
+        return new Pair<Integer, Integer>(minimum, maximum);
     }
 
 
