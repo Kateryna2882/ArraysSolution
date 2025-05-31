@@ -13,8 +13,17 @@ public class Solution4 {
     }
 
     public static void printObjectType(Object o) {
-        //write your code here
+        if (o instanceof Cat)
+            System.out.println("Cat");
 
+        if (o instanceof Dog)
+            System.out.println("Dog");
+
+        if (o instanceof Bird)
+            System.out.println("Bird");
+
+        if (o instanceof Lamp)
+            System.out.println("Lamp");
     }
 
     public static class Cat {
