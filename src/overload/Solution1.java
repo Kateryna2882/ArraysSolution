@@ -10,5 +10,12 @@ public class Solution1 {
     }
 
     //write your code here
+    public static void print(int x) {
+
+    }
+
+    public static void print(String s) {
+
+    }
 }
 
