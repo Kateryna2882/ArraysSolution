@@ -9,11 +9,12 @@ public class Solution2 {
 
     }
 
-    public static class Pet {
+    public static abstract class Pet {
         public String getName() {
             return "I'm a kitten";
         }
 
         public abstract Pet getChild();
     }
+
 }
