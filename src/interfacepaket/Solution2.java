@@ -10,5 +10,23 @@ public class Solution2 {
     }
 
     // Add interfaces here
+    public interface CanFly {
+        static void fly() {
+
+        }
+    }
+
+    public interface CanRun {
+        static void run() {
+
+        }
+
+    }
+
+    public interface CanSwim {
+        static void swim() {
+
+        }
+    }
 
 }
