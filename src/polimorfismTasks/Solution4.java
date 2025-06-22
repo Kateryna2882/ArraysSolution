@@ -1,4 +1,5 @@
 package polimorfismTasks;
+
 /*
 Unknown animal
 
@@ -15,6 +16,19 @@ public class Solution4 {
 
     public static String getObjectType(Object o) {
         //write your code here
+
+        if (o instanceof Cat)
+            return "Cat";
+
+        if (o instanceof Tiger)
+            return "Tiger";
+
+        if (o instanceof Lion)
+            return "Lion";
+
+        if (o instanceof Bull)
+            return "Bull";
+
 
         return "Animal";
     }
