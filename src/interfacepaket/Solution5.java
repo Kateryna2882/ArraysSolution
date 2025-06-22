@@ -10,6 +10,15 @@ public class Solution5 {
 
     }
 
-    // Add public interfaces and a public class here
-}
+    public interface CanRun {
+        public void run();
+    }
 
+    public interface CanSwim {
+        public void swim();
+    }
+
+    public abstract class Human implements CanRun, CanSwim {
+
+    }
+}
