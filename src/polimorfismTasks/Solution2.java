@@ -30,6 +30,8 @@ public class Solution2 {
     }
 
     public static class Cat extends Pet {
-
+        public void setName(String name) {
+            this.name = "I'm a cat";
+        }
     }
 }
