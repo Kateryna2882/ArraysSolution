@@ -1,4 +1,5 @@
 package polimorfismTasks;
+
 /*
 We all have a little cat in us…
 
@@ -17,7 +18,10 @@ public class Solution1 {
     }
 
     public static class Cat extends Pet {
-
+        public String getName() {
+            return "I'm a cat";
+        }
     }
 }
+
 
