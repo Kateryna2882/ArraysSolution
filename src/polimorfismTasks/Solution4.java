@@ -6,46 +6,54 @@ Unknown animal
 */
 public class Solution4 {
 
-    public static void main(String[] args) {
-        System.out.println(getObjectType(new Cat()));
-        System.out.println(getObjectType(new Tiger()));
-        System.out.println(getObjectType(new Lion()));
-        System.out.println(getObjectType(new Bull()));
-        System.out.println(getObjectType(new Pig()));
-    }
+    public class Solution {
+        public static void main(String[] args) {
+            System.out.println(getObjectType(new Cat()));
+            System.out.println(getObjectType(new Tiger()));
+            System.out.println(getObjectType(new Lion()));
+            System.out.println(getObjectType(new Bull()));
+            System.out.println(getObjectType(new Cow()));
+            System.out.println(getObjectType(new Animal()));
+        }
 
-    public static String getObjectType(Object o) {
-        //write your code here
+        public static String getObjectType(Object o) {
+            if (o instanceof Tiger)
+                return "Tiger";
 
-        if (o instanceof Cat)
-            return "Cat";
+            if (o instanceof Lion)
+                return "Lion";
 
-        if (o instanceof Tiger)
-            return "Tiger";
+            if (o instanceof Bull)
+                return "Bull";
 
-        if (o instanceof Lion)
-            return "Lion";
+            if (o instanceof Cow)
+                return "Cow";
 
-        if (o instanceof Bull)
-            return "Bull";
+            if (o instanceof Cat)
+                return "Cat";
 
+            if (o instanceof Animal)
+                return "Animal";
 
-        return "Animal";
-    }
+            return null;
+        }
 
-    public static class Cat {
-    }
+        public static class Cat extends Animal {
+        }
 
-    public static class Tiger {
-    }
+        public static class Tiger extends Cat {
+        }
 
-    public static class Lion {
-    }
+        public static class Lion extends Cat {
+        }
 
-    public static class Bull {
-    }
+        public static class Bull extends Animal {
+        }
 
-    public static class Pig {
+        public static class Cow extends Animal {
+        }
+
+        public static class Animal {
+        }
     }
 }
-
