@@ -10,11 +10,16 @@ public class Solution8 {
         System.out.println(cto);
     }
 
+    public static class Employee {
+        public void workHard() {
+        }
+    }
+
     public static interface Businessman {
         public void workHard();
     }
 
-    public static class CTO implements Businessman {
+    public static class CTO extends Employee implements Businessman {
 
     }
 }
