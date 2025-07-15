@@ -21,16 +21,28 @@ public class Solution6 {
         public void swim();
     }
 
-    public class Duck {
+    public class Duck implements CanFly, CanSwim, CanRun {
+        public void fly() {
+        }
+
+        public void swim() {
+        }
+
+        public void run() {
+        }
 
     }
 
-    public class Penguin {
-
+    public class Penguin implements CanRun, CanSwim {
+        public void run() {
+        }
+        public void swim(){
+        }
     }
 
-    public class Toad {
-
+    public class Toad implements CanSwim {
+        public void swim(){
+        }
     }
 
 }
