@@ -8,6 +8,7 @@ public class Solution7 {
     public static void main(String[] args) {
         Human human = new Human();
         System.out.println(human);
+
     }
 
     public static interface Employee {
@@ -26,7 +27,7 @@ public class Solution7 {
         public void workVeryHard();
     }
 
-    public static class Human {
+    public static class Human implements Businessman, Employee, Secretary{
 
         public void workHard() {
         }
