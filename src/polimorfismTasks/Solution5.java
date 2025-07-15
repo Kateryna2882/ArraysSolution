@@ -9,16 +9,44 @@ public class Solution5 {
 
     }
 
-    public class Cat {
+    public interface CanFly {
+        public void fly();
     }
 
-    public class Dog {
+    public interface CanClimb {
+        public void climb();
+    }
+
+    public interface CanRun {
+        public void run();
+    }
+
+    public class Cat implements CanRun, CanClimb {
+        public void climb() {
+        }
+
+        public void run() {
+        }
+    }
+
+    public class Dog implements CanRun {
+        public void run() {
+        }
     }
 
     public class Tiger extends Cat {
+        public void run() {
+        }
+
+        public void climb() {
+        }
     }
 
-    public class Duck {
-    }
+    public class Duck implements CanRun, CanFly {
+        public void run() {
+        }
 
+        public void fly() {
+        }
+    }
 }
