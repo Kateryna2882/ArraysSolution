@@ -16,5 +16,7 @@ public class Solution9 {
         return i * i;
     }
 
+    public static int transformValue(Integer i) {
+        return i * 2;
+    }
 }
-
