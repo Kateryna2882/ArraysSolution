@@ -19,6 +19,13 @@ public class Solution13 {
         }
 
         //write your code here
+        int index = 0;
+        for (int i = 1; i < array.length ; i++) {
+            if (array[i] < array[index]) {
+                index = i;
+            }
+            
+        }
 
         return new Pair<Integer, Integer>(0, 0);
     }
