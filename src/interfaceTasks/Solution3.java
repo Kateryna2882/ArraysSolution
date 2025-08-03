@@ -1,0 +1,25 @@
+package interfaceTasks;
+/*
+Don't mix beer with cola
+
+*/
+public class Solution3 {
+    public static void main(String[] args) throws Exception {
+        print(new Beer());
+        print(new Cola());
+    }
+
+    private static void print(Drink drink) {
+        System.out.println(drink.getClass().getSimpleName());
+    }
+
+    public interface Drink {
+        boolean isAlcoholic();
+    }
+
+    public static class Beer {
+    }
+
+    public static class Cola {
+    }
+}
