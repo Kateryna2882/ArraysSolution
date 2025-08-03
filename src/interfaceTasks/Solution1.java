@@ -5,6 +5,7 @@ Beer
 */
 
 public class Solution1 {
+
     public static void main(String[] args) throws Exception {
     }
 
@@ -22,7 +23,19 @@ public class Solution1 {
         void sleepOnTheFloor();
     }
 
-    public static class BeerLover {
+    public static class BeerLover implements Alcoholic {
 
+        public void askForMore(String message) {
+        }
+
+        public void sayThankYou() {
+        }
+
+        public boolean isReadyToGoHome() {
+            return Alcoholic.READY_TO_GO_HOME;
+        }
+
+        public void sleepOnTheFloor() {
+        }
     }
 }
