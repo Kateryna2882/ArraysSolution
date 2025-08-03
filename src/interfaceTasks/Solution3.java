@@ -1,4 +1,5 @@
 package interfaceTasks;
+
 /*
 Don't mix beer with cola
 
@@ -17,9 +18,19 @@ public class Solution3 {
         boolean isAlcoholic();
     }
 
-    public static class Beer {
+    public static class Beer implements Drink {
+
+        @Override
+        public boolean isAlcoholic() {
+            return true;
+        }
     }
 
-    public static class Cola {
+    public static class Cola implements Drink {
+
+        @Override
+        public boolean isAlcoholic() {
+            return false;
+        }
     }
 }
