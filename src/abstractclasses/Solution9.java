@@ -9,10 +9,9 @@ A big fox is still a fox
 
 public class Solution9 {
     public static void main(String[] args) throws Exception {
-        Fox bigFox = new BigFox();
+        BigFox bigFox = new BigFox();
         System.out.println(bigFox.getName());
         System.out.println(bigFox.getColor());
-
     }
 
     public interface Animal {
@@ -25,11 +24,9 @@ public class Solution9 {
         }
     }
 
-    public static class BigFox {
-        public Color() {
+    public static class BigFox extends Fox {
+        public Color getColor() {
             return Color.GRAY;
         }
     }
-
 }
-
