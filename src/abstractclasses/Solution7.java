@@ -12,7 +12,7 @@ public class Solution7 {
 
     public abstract static class Translator {
         public String translate() {
-            return "I translate from Russian";
+            return "I translate from Ukrainian";
         }
     }
 
