@@ -17,5 +17,12 @@ public class Solution6 {
             return "I translate from " + getLanguage();
         }
     }
+    public static class UkranianTranslator extends Translator {
+
+        @Override
+        public String getLanguage() {
+            return "Ukrainian";
+        }
+    }
 
 }
