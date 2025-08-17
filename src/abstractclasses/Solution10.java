@@ -10,19 +10,53 @@ public class Solution10 {
     public static void main(String[] args) {
 
     }
-
-    // Can move
     public interface CanMove {
         void move();
     }
 
-    // Can be eaten
     public interface Edible {
         void beEaten();
     }
 
-    // Can eat
     public interface CanEat {
         void eat();
     }
+
+    class Cat implements CanMove, Edible, CanEat {
+
+        public void eat() {
+
+        }
+
+        public void beEaten() {
+
+        }
+
+        public void move() {
+
+        }
+    }
+
+    class Mouse implements CanMove, Edible {
+
+        public void beEaten() {
+
+        }
+
+        public void move() {
+
+        }
+    }
+
+    class Dog implements CanMove, CanEat {
+
+        public void eat() {
+
+        }
+
+        public void move() {
+
+        }
+    }
+}
 }
