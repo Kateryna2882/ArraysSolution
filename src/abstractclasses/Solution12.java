@@ -1,4 +1,5 @@
 package abstractclasses;
+
 /*
 Nice weather
 
@@ -10,11 +11,15 @@ public class Solution12 {
         System.out.println(new Today(WeatherType.FREEZING));
     }
 
-    static class Today {
+    static class Today implements Weather {
         private String type;
 
         Today(String type) {
             this.type = type;
+        }
+
+        public String getWeatherType() {
+            return this.type;
         }
 
         @Override
