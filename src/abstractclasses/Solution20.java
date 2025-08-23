@@ -1,4 +1,5 @@
 package abstractclasses;
+
 import java.awt.*;
 
 /*
@@ -17,15 +18,19 @@ public class Solution20 {
         Color getColor();
     }
 
-    public static class Fox implements Animal {
+    public static abstract class Fox implements Animal {
         public String getName() {
             return "Fox";
         }
     }
 
-    public abstract static class BigFox {
+    public static class BigFox extends Fox {
+        public Color getColor() {
+            ;
+            return Color.GREEN;
+
+        }
 
     }
-
 }
 
