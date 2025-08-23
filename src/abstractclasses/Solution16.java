@@ -5,7 +5,6 @@ Fixing bugs
 
 */
 public class Solution16 {
-
     public static void main(String[] args) {
         System.out.println(Dream.HOBBY.toString());
         System.out.println(new Hobby().INDEX);
@@ -14,11 +13,11 @@ public class Solution16 {
     interface Desire {
     }
 
-    interface Dream implements Hobby {
+    interface Dream {
         public static Hobby HOBBY = new Hobby();
     }
 
-    static class Hobby extends Desire, Dream {
+    static class Hobby implements Desire, Dream {
         static int INDEX = 1;
 
         @Override
@@ -27,5 +26,4 @@ public class Solution16 {
             return "" + INDEX;
         }
     }
-
 }
