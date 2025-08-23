@@ -12,4 +12,10 @@ public class Solution17 {
     interface SimpleObject<T> {
         SimpleObject<T> getInstance();
     }
+
+    static class StringObject implements SimpleObject<String> {
+        public SimpleObject<String> getInstance() {
+            return null;
+        }
+    }
 }
