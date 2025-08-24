@@ -18,7 +18,7 @@ public class Solution5 {
             public static Hobby HOBBY = new Hobby();
         }
 
-       pu static class Hobby implements Desire, Dream {
+       public static class Hobby implements Desire, Dream {
             static int INDEX = 1;
 
             @Override
@@ -28,4 +28,4 @@ public class Solution5 {
             }
         }
     }
-}
+
