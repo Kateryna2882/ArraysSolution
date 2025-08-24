@@ -1,4 +1,5 @@
 package abstractclasses;
+
 /*
 Robot wars
 
@@ -18,6 +19,22 @@ public class Solution23 {
         doMove(amigo, enemy);
     }
 
+    public static class Robot extends AbstractRobot {
+        String name;
+
+        public Robot(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+
     public static void doMove(AbstractRobot robotFirst, AbstractRobot robotSecond) {
         BodyPart attacked = robotFirst.attack();
         BodyPart defended = robotSecond.defend();
@@ -29,7 +46,12 @@ public class Solution23 {
         BodyPart attack();
     }
 
-    public final class BodyPart {
+    public interface CanDefend {
+        BodyPart defend();
+    }
+
+    public static final class BodyPart {
+        final static BodyPart CHEST = new BodyPart("chest") ;
         final static BodyPart LEG = new BodyPart("leg");
         final static BodyPart HEAD = new BodyPart("head");
         final static BodyPart ARM = new BodyPart("hand");
@@ -45,7 +67,43 @@ public class Solution23 {
             return this.bodyPart;
         }
     }
-    public class AbstractRobot {
-    }
 
+    public class AbstractRobot implements CanAttack, CanDefend {
+        private int hitCount;
+
+        public BodyPart attack() {
+            BodyPart attackedBodyPart = null;
+            hitCount = hitCount + 1;
+
+            if (hitCount == 1) {
+                attackedBodyPart = BodyPart.ARM;
+            } else if (hitCount == 2) {
+                attackedBodyPart = BodyPart.HEAD;
+            } else if (hitCount == 3) {
+                attackedBodyPart = BodyPart.LEG;
+            } else {
+                hitCount = 0;
+                attackedBodyPart = BodyPart.CHEST;
+            }
+
+            return attackedBodyPart;
+        }
+
+        public BodyPart defend() {
+            BodyPart defendedBodyPart = null;
+            hitCount = hitCount + 2;
+
+            if (hitCount == 1) {
+                defendedBodyPart = BodyPart.HEAD;
+            } else if (hitCount == 2) {
+                defendedBodyPart = BodyPart.LEG;
+            } else if (hitCount == 3) {
+                defendedBodyPart = BodyPart.CHEST;
+            } else {
+                hitCount = 0;
+                defendedBodyPart = BodyPart.ARM;
+            }
+            return defendedBodyPart;
+        }
+    }
 }
