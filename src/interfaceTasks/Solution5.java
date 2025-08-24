@@ -7,8 +7,6 @@ Four mistakes
 public class Solution5 {
 
     public static void main(String[] args) {
-
-        public static void main (String[]args){
             System.out.println(Dream.HOBBY.toString());
             System.out.println(new Hobby().toString());
         }

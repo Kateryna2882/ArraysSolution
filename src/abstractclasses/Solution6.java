@@ -6,7 +6,7 @@ Let's hire a translator
 
 public class Solution6 {
     public static void main(String[] args) {
-        UkranianianTranslator russianTranslator = new UkranianianTranslator();
+        UkranianianTranslator ukranianianTranslator = new UkranianianTranslator();
         System.out.println(ukranianTranslator.translate());
     }
 
