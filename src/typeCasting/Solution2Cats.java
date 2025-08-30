@@ -1,11 +1,25 @@
 package typeCasting;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /*
 Cats
 
 */
+
+
 public class Solution2Cats {
     public static void main(String[] args) throws Exception {
         //write your code here
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        String key;
+
+        while (!(key = reader.readLine()).isEmpty()) {
+            Cat cat = CatFactory.getCatByKey(key);
+            System.out.println(cat.toString());
+        }
     }
 
     static class CatFactory {
@@ -65,4 +79,3 @@ public class Solution2Cats {
         }
     }
 }
-
