@@ -2,7 +2,6 @@ package typeCasting;
 
 /*
 Food
-
 */
 
 public class Solution3Food {
