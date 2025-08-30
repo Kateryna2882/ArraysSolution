@@ -14,27 +14,24 @@ public class Solution1 {
     }
 
     public static Building getSchool() {
-        //write your code here
-        return null;
+        return new School();
     }
 
     public static Building getBuilding() {
-        //write your code here
-        return null;
+        return new Building();
     }
 
-    static class School /*write your code here*/ {
+    static class School extends Building {
         @Override
         public String toString() {
             return "School";
         }
     }
 
-    static class Building /*write your code here*/ {
+    static class Building {
         @Override
         public String toString() {
             return "Building";
         }
     }
 }
-
