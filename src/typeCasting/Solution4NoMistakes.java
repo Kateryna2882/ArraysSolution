@@ -7,17 +7,16 @@ No mistakes
 
 public class Solution4NoMistakes {
     public static void main(String[] args) {
-        Object obj = // Add your code here
+        Object obj = new Jerry();
 
-                Mouse mouse = (Mouse) obj;
+        Mouse mouse = (Mouse) obj;
         GrayMouse grayMouse = (GrayMouse) mouse;
         Jerry jerry = (Jerry) grayMouse;
 
         printClasses(obj, mouse, grayMouse, jerry);
-
     }
 
-    public static void printClasses(Object obj, Mouse mouse, GrayMouse grayMouse, Jerry jerry) {
+    private static void printClasses(Object obj, Mouse mouse, GrayMouse grayMouse, Jerry jerry) {
         System.out.println(jerry.getClass().getSimpleName());
         System.out.println(grayMouse.getClass().getSimpleName());
         System.out.println(mouse.getClass().getSimpleName());
@@ -33,4 +32,3 @@ public class Solution4NoMistakes {
     static class Jerry extends GrayMouse {
     }
 }
-
