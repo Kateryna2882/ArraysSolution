@@ -1,5 +1,7 @@
 package typeCasting;
 
+import static java.sql.DriverManager.println;
+
 /*
 Bridges
 
@@ -11,5 +13,10 @@ public class SolutionBridges {
     }
 
     // Add println method here
+
+    public static void println(Bridge waterBridge) {
+        System.out.println(waterBridge.getCarsCount());
+    }
+
 }
 
