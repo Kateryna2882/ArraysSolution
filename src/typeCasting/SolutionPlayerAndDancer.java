@@ -23,7 +23,13 @@ public class SolutionPlayerAndDancer {
     }
 
     public static void haveFun(Person person) {
-        //write your code here
+        if (person instanceof Player) {
+            Player player = (Player) person;
+            player.play();
+        } else if (person instanceof Dancer) {
+            Dancer dancer = (Dancer) person;
+            dancer.dance();
+        }
     }
 
     interface Person {
@@ -41,4 +47,3 @@ public class SolutionPlayerAndDancer {
         }
     }
 }
-
