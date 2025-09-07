@@ -5,7 +5,7 @@ Chicken factory
 
 */
 
-public class SolutionChickenFactory {
+public class SolutionChickenFactory implements Continent {
     public static void main(String[] args) {
         Hen hen = HenFactory.getHen(Continent.AFRICA);
         hen.getMonthlyEggCount();
