@@ -5,105 +5,108 @@ Robot wars
 
 */
 public class Solution23 {
-    public static void main(String[] args) {
-        Robot amigo = new Robot("Amigo");
-        Robot enemy = new Robot("Enemy");
+    public class Main {
+        public static void main(String[] args) {
+            Robot amigo = new Robot("Amigo");
+            Robot enemy = new Robot("Enemy");
 
-        doMove(amigo, enemy);
-        doMove(amigo, enemy);
-        doMove(enemy, amigo);
-        doMove(amigo, enemy);
-        doMove(enemy, amigo);
-        doMove(amigo, enemy);
-        doMove(enemy, amigo);
-        doMove(amigo, enemy);
-    }
-
-    public static class Robot extends AbstractRobot {
-        String name;
-
-        public Robot(String name) {
-            this.name = name;
+            doMove(amigo, enemy);
+            doMove(amigo, enemy);
+            doMove(enemy, amigo);
+            doMove(amigo, enemy);
+            doMove(enemy, amigo);
+            doMove(amigo, enemy);
+            doMove(enemy, amigo);
+            doMove(amigo, enemy);
         }
 
-        public String getName() {
-            return name;
+        public static void doMove(AbstractRobot robotFirst, AbstractRobot robotSecond) {
+            BodyPart attacked = robotFirst.attack();
+            BodyPart defended = robotSecond.defend();
+            System.out.println(String.format("%s attacked %s: its %s was attacked, and its %s was defended",
+                    robotFirst.getName(), robotSecond.getName(), attacked, defended));
         }
 
-        public void setName(String name) {
-            this.name = name;
-        }
-    }
-
-    public static void doMove(AbstractRobot robotFirst, AbstractRobot robotSecond) {
-        BodyPart attacked = robotFirst.attack();
-        BodyPart defended = robotSecond.defend();
-        System.out.println(String.format("%s attacked %s: its %s  was attacked, and its %s was defended",
-                robotFirst.getName(), robotSecond.getName(), attacked, defended));
-    }
-
-    public interface CanAttack {
-        BodyPart attack();
-    }
-
-    public interface CanDefend {
-        BodyPart defend();
-    }
-
-    public static final class BodyPart {
-        final static BodyPart CHEST = new BodyPart("chest") ;
-        final static BodyPart LEG = new BodyPart("leg");
-        final static BodyPart HEAD = new BodyPart("head");
-        final static BodyPart ARM = new BodyPart("hand");
-
-        private String bodyPart;
-
-        private BodyPart(String bodyPart) {
-            this.bodyPart = bodyPart;
+        // ========================== INTERFACES ==========================
+        public interface CanAttack {
+            BodyPart attack();
         }
 
-        @Override
-        public String toString() {
-            return this.bodyPart;
+        public interface CanDefend {
+            BodyPart defend();
         }
-    }
 
-    public class AbstractRobot implements CanAttack, CanDefend {
-        private int hitCount;
+        // ========================== BODY PART ==========================
+        public static final class BodyPart {
+            public static final BodyPart CHEST = new BodyPart("chest");
+            public static final BodyPart LEG = new BodyPart("leg");
+            public static final BodyPart HEAD = new BodyPart("head");
+            public static final BodyPart ARM = new BodyPart("arm");
 
-        public BodyPart attack() {
-            BodyPart attackedBodyPart = null;
-            hitCount = hitCount + 1;
+            private final String bodyPart;
 
-            if (hitCount == 1) {
-                attackedBodyPart = BodyPart.ARM;
-            } else if (hitCount == 2) {
-                attackedBodyPart = BodyPart.HEAD;
-            } else if (hitCount == 3) {
-                attackedBodyPart = BodyPart.LEG;
-            } else {
-                hitCount = 0;
-                attackedBodyPart = BodyPart.CHEST;
+            private BodyPart(String bodyPart) {
+                this.bodyPart = bodyPart;
             }
 
-            return attackedBodyPart;
+            @Override
+            public String toString() {
+                return this.bodyPart;
+            }
         }
 
-        public BodyPart defend() {
-            BodyPart defendedBodyPart = null;
-            hitCount = hitCount + 2;
+        // ========================== ABSTRACT ROBOT ==========================
+        public static abstract class AbstractRobot implements CanAttack, CanDefend {
+            private String name;
+            private int attackCount;
+            private int defendCount;
 
-            if (hitCount == 1) {
-                defendedBodyPart = BodyPart.HEAD;
-            } else if (hitCount == 2) {
-                defendedBodyPart = BodyPart.LEG;
-            } else if (hitCount == 3) {
-                defendedBodyPart = BodyPart.CHEST;
-            } else {
-                hitCount = 0;
-                defendedBodyPart = BodyPart.ARM;
+            public AbstractRobot(String name) {
+                this.name = name;
             }
-            return defendedBodyPart;
+
+            public String getName() {
+                return name;
+            }
+
+            @Override
+            public BodyPart attack() {
+                attackCount++;
+                switch (attackCount) {
+                    case 1:
+                        return BodyPart.ARM;
+                    case 2:
+                        return BodyPart.HEAD;
+                    case 3:
+                        return BodyPart.LEG;
+                    default:
+                        attackCount = 0;
+                        return BodyPart.CHEST;
+                }
+            }
+
+            @Override
+            public BodyPart defend() {
+                defendCount++;
+                switch (defendCount) {
+                    case 1:
+                        return BodyPart.HEAD;
+                    case 2:
+                        return BodyPart.LEG;
+                    case 3:
+                        return BodyPart.CHEST;
+                    default:
+                        defendCount = 0;
+                        return BodyPart.ARM;
+                }
+            }
+        }
+
+        // ========================== ROBOT ==========================
+        public static class Robot extends AbstractRobot {
+            public Robot(String name) {
+                super(name);
+            }
         }
     }
 }
