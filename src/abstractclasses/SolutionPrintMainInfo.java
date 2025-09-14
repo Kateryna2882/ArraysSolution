@@ -15,6 +15,12 @@ public class SolutionPrintMainInfo {
 
     public static void printMainInfo(Object object) {
         //write your code here
+        if (object instanceof Drawable) {
+            ((Drawable) object).draw();
+        }
+        if (object instanceof Movable) {
+            ((Movable) object).move();
+        }
 
     }
 
