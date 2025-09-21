@@ -39,15 +39,26 @@ public class Solution3 {
         abstract CanSwim getCurrentCreature();
     }
 
-    static class Orca {
+    static class Orca extends SeaCreature implements CanSwim {
+        @Override
+        CanSwim getCurrentCreature() {
+            return this;
+        }
     }
 
-    static class Whale {
-
+    static class Whale extends SeaCreature implements CanSwim {
+        @Override
+        CanSwim getCurrentCreature() {
+            return this;
+        }
     }
 
-    static class RiverOtter {
+    static class RiverOtter implements CanWalk, CanSwim {
 
+        public void swim() {
+        }
+
+        public void walk() {
+        }
     }
 }
-
