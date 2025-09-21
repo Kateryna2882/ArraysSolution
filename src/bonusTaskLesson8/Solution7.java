@@ -10,32 +10,26 @@ GCD
 public class Solution7 {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try{
-            String input1 = reader.readLine();
-            String input2 = reader.readLine();
 
-            int num1 = Integer.parseInt(input1);
-            int num2 = Integer.parseInt(input2);
-            if (num1 <= 0 || num2 <= 0) {
-                throw new IllegalArgumentException("Both numbers must be positive integers!");
-            }
-            int gcd = findGCD(num1, num2);
+        int first = Integer.parseInt(reader.readLine());
+        int second = Integer.parseInt(reader.readLine());
 
-            // 4. Вивід результату
-            System.out.println("GCD = " + gcd);
-
-        } catch (NumberFormatException e) {
-            throw new NumberFormatException("Invalid input! Please enter positive integers only.");
-        }
+        System.out.println(getNOD(first, second));
     }
 
-    // Метод для обчислення НСД
-    public static int findGCD(int a, int b) {
-        while (b != 0) {
-            int temp = b;
-            b = a % b;
-            a = temp;
+    private static int getNOD(int first, int second) {
+        if(first < 1 || second < 1) {
+            throw new IllegalArgumentException();
         }
-        return a;
+
+        while (first != second) {
+            if (first > second) {
+                first -= second;
+            }
+            if (second > first) {
+                second -= first;
+            }
+        }
+        return first;
     }
 }
