@@ -9,7 +9,7 @@ Janitorial services
 */
 public class Solution2 {
     public static void main(String[] args) {
-        List<Apartment> apartments = new ArrayList<>();
+        List<Apartment> apartments = new ArrayList<Apartment>();
         apartments.add(new OneRoomApt());
         apartments.add(new TwoRoomApt());
         apartments.add(new ThreeRoomApt());
@@ -18,19 +18,14 @@ public class Solution2 {
     }
 
     public static void cleanAllApartments(List<Apartment> apartments) {
-        // Write your implementation of Items 1-4 here
         for (Apartment apartment : apartments) {
-            if (apartment instanceof OneRoomApt) {
-                ((OneRoomApt) apartment).clean1Room();
-            } else if (apartment instanceof TwoRoomApt) {
-                ((TwoRoomApt) apartment).clean2Rooms();
-            } else if (apartment instanceof ThreeRoomApt) {
-                ((ThreeRoomApt) apartment).clean3Rooms();
-            }
+            if (apartment instanceof OneRoomApt) ((OneRoomApt) apartment).clean1Room();
+            else if (apartment instanceof TwoRoomApt) ((TwoRoomApt) apartment).clean2Rooms();
+            else if (apartment instanceof ThreeRoomApt) ((ThreeRoomApt) apartment).clean3Rooms();
         }
     }
 
-    static interface Apartment {
+    interface Apartment {
     }
 
     static class OneRoomApt implements Apartment {
@@ -51,4 +46,3 @@ public class Solution2 {
         }
     }
 }
-
