@@ -16,13 +16,15 @@ public class Solution4 {
         }
     }
 
-    static class Person {
+    public static class Person {
         public String name;
 
-        Person(String name) {
+        public Person(String name) {
             this.name = name;
             this.allMoney = new ArrayList<Money>();
-            //write your code here
+            allMoney.add(new Euro(2000));
+            allMoney.add(new USD(700));
+            allMoney.add(new Ruble(7000));
         }
 
         private List<Money> allMoney;
@@ -32,4 +34,5 @@ public class Solution4 {
         }
     }
 }
+
 
