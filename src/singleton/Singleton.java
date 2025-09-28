@@ -1,7 +1,12 @@
 package singleton;
 
 public class Singleton {
+    private static Singleton instance = new Singleton();
+
     public static Singleton getInstance() {
-        return null;
+        return instance;
+    }
+
+    private Singleton() {
     }
 }
